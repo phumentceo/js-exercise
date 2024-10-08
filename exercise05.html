@@ -49,10 +49,14 @@
     var allMenu = document.querySelectorAll(".menu");
     console.log(allMenu);
 
-    for(let i=0 ;i<allMenu.length;i++){
+    for(let i=0;i<allMenu.length;i++){
         allMenu[i].addEventListener("click", () => {
-            alert(i)
+            let menuActive = document.querySelector(".menu.active");
+            menuActive.classList.remove("active");
+
+            //add active class to current click
+            allMenu[i].classList.add("active");
         })
     }
-</script>
+</script> 
 </html>
