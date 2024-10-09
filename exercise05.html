@@ -40,6 +40,7 @@
             margin-top: 10px;
         }
 
+        /* home page style */
         .home-page{
             width: 100%;
             height: 100%;
@@ -54,6 +55,23 @@
             width: 100%;
             height: 100%;
             background-color: rgb(127, 231, 79);
+            display: none;
+        }
+
+
+        /* contact page */
+        .contact-page{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(235, 150, 100);
+            display: none;
+        }
+
+        /* services page */
+        .service-page{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(100, 100, 100);
             display: none;
         }
 
@@ -85,9 +103,21 @@
 
         <!--About page start-->
         <div class="about-page page" page-name="about">
-            <h1>About page</h1>
+            <h1>Contact page</h1>
         </div>
         <!-- About page end -->
+
+        <!--Contanct page start-->
+        <div class="contact-page page" page-name="contact">
+            <h1>Contanct page</h1>
+        </div>
+        <!-- Contact page end -->
+
+        <!--Services page start-->
+        <div class="service-page page" page-name="services">
+            <h1>Service page</h1>
+        </div>
+        <!--Services page end -->
     </div>
 </body>
 <script>
@@ -110,7 +140,7 @@
             let menuName = allMenu[i].textContent.toLocaleLowerCase();
 
             for(let j=0;j<allPages.length; j++){
-                
+
                 if(allPages[j].getAttribute('page-name') == menuName){
                     let pageActive = document.querySelector(".page.active");
                     pageActive.classList.remove('active');
