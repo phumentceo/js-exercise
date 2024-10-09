@@ -44,6 +44,22 @@
             width: 100%;
             height: 100%;
             background-color: aqua;
+            display: none;
+        }
+
+       
+
+        /* about page style */
+        .about-page {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(127, 231, 79);
+            display: none;
+        }
+
+
+        .page.active{
+            display: block;
         }
 
     </style>
@@ -60,9 +76,18 @@
     </header>
 
     <div class="contents">
-        <div class="home-page">
+        
+        <!-- Home page start -->
+        <div class="home-page page">
             <h1>Home Page</h1>
         </div>
+        <!-- Home page end -->
+
+        <!--About page start-->
+        <div class="about-page page active">
+            <h1>About page</h1>
+        </div>
+        <!-- About page end -->
     </div>
 </body>
 <script>
