@@ -76,15 +76,15 @@
     </header>
 
     <div class="contents">
-        
+
         <!-- Home page start -->
-        <div class="home-page page">
+        <div class="home-page page active" page-name="home">
             <h1>Home Page</h1>
         </div>
         <!-- Home page end -->
 
         <!--About page start-->
-        <div class="about-page page active">
+        <div class="about-page page" page-name="about">
             <h1>About page</h1>
         </div>
         <!-- About page end -->
@@ -103,5 +103,25 @@
             allMenu[i].classList.add("active");
         })
     }
+
+    var allPages = document.querySelectorAll('.page'); //array
+    for(let i=0;i<allMenu.length;i++){
+        allMenu[i].addEventListener("click", () => {
+            let menuName = allMenu[i].textContent.toLocaleLowerCase();
+
+            for(let j=0;j<allPages.length; j++){
+                
+                if(allPages[j].getAttribute('page-name') == menuName){
+                    let pageActive = document.querySelector(".page.active");
+                    pageActive.classList.remove('active');
+
+                    allPages[j].classList.add('active');
+                }
+            }
+          
+        })
+    }
+
+
 </script> 
 </html>
