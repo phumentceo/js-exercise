@@ -93,9 +93,21 @@
     for(let i=0;i<allProduct.length;i++){
         allProduct[i].addEventListener("click", () => {
             let productActive = document.querySelector(".card.active");
+
+            //remove active class from card  
             productActive.classList.remove("active");
 
+            //add active class to current click card
             allProduct[i].querySelector(".card").classList.add("active");
+
+            
+
+            //getting from product-show class
+            let productShow = document.querySelector(".product-show img");
+
+            //change image source to current card image
+            productShow.src = allProduct[i].querySelector("img").src;
+
         })
     }
 </script>
