@@ -17,7 +17,7 @@
                 <option value="female">female</option>
             </select>
             <input type="number"  class="student_age form-control me-3" placeholder="Student Age">
-            <button class=" btn btn-success">Save</button>
+            <button type="button"  class=" btn btn-success btn_save">Save</button>
         </form>
     </header>
 
@@ -32,6 +32,26 @@
                 <th>Student Age</th>
                 <th>Action</th>
             </tr>
+            <tbody id="student_list">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var btnSaveStudent = document.querySelector(".btn_save");
+    var tbodyList      = document.querySelector("#student_list");
+    btnSaveStudent.addEventListener("click", ()  => {
+        let studentId = document.querySelector(".student_id").value;
+        let studentName = document.querySelector(".student_name").value;
+        let studentGender = document.querySelector(".student_gender").value;
+        let studentAge = document.querySelector(".student_age").value;
+
+        console.log(studentId,studentName,studentGender,studentAge);
+
+        let tr = ``;
+
+        tr = `
             <tr class=" text-center">
                 <td>1</td>
                 <td>John Doe</td>
@@ -40,8 +60,12 @@
                     <button class="btn btn-primary">Edit</button>
                     <button class="btn btn-danger">Delete</button>
                 </td>
-            </tr>
-        </table>
-    </div>
-</body>
+           </tr>
+        `;
+
+        tbodyList.innerHTML  += tr;
+
+    
+    })
+</script>
 </html>
