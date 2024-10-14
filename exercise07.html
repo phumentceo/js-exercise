@@ -29,16 +29,18 @@
             <tr class=" table-dark text-center">
                 <th>Student Id</th>
                 <th>Student Name</th>
+                <th>Student Gender</th>
                 <th>Student Age</th>
                 <th>Action</th>
             </tr>
             <tbody id="student_list">
-
+                
             </tbody>
         </table>
     </div>
 </body>
 <script>
+
     var btnSaveStudent = document.querySelector(".btn_save");
     var tbodyList      = document.querySelector("#student_list");
     btnSaveStudent.addEventListener("click", ()  => {
@@ -53,9 +55,10 @@
 
         tr = `
             <tr class=" text-center">
-                <td>1</td>
-                <td>John Doe</td>
-                <td>18</td>
+                <td>${studentId}</td>
+                <td>${studentName}</td>
+                <td>${studentGender}</td>
+                <td>${studentAge}</td>
                 <td>
                     <button class="btn btn-primary">Edit</button>
                     <button class="btn btn-danger">Delete</button>
